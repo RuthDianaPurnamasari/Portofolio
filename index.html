@@ -11,10 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <meta name="theme-color" content="#f6f4ff">
+    <script>document.documentElement.classList.add("js");</script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
 <a class="skip-link" href="#konten">Lewati ke konten</a>
 
 <!-- ================= HEADER ================= -->
@@ -32,8 +35,8 @@
         <nav class="main-nav" id="main-navigation" aria-label="Navigasi utama">
             <a href="#tentang">Tentang</a>
             <a href="#pengalaman">Pengalaman</a>
-            <a href="#skills">Skills</a>
-            <a href="#project">Project</a>
+            <a href="#skills">Keahlian</a>
+            <a href="#project">Proyek</a>
             <a href="#organisasi">Organisasi</a>
             <a href="#publikasi">Publikasi</a>
             <a href="#kontak" class="nav-cta">Kontak</a>
@@ -48,18 +51,18 @@
     <div class="container hero-grid">
 
         <div class="hero-text">
-            <p class="hero-hello">Halo, saya</p>
+            <p class="hero-hello">Halo <span aria-hidden="true">😊</span></p>
             <h1>
-                <span>Ruth Diana</span>
+                <span>Saya Ruth Diana</span>
                 <span>Purnamasari</span>
                 <span>Sagala</span>
             </h1>
             <p class="hero-lead">
-                Front-end developer dengan pengalaman quality assurance. Saya membangun antarmuka aplikasi,
-                lalu mengujinya agar bug ditemukan sebelum sampai ke pengguna.
+                Lulusan D4 Teknik Informatika Terapan dengan pengalaman dalam pengembangan antarmuka aplikasi
+                dan quality assurance. Saya tertarik untuk terus mengembangkan keterampilan di bidang teknologi informasi.
             </p>
             <div class="hero-actions">
-                <a href="#project" class="btn btn-primary">Lihat project</a>
+                <a href="#project" class="btn btn-primary">Lihat proyek</a>
                 <a href="#kontak" class="btn btn-ghost">Hubungi saya</a>
             </div>
         </div>
@@ -74,31 +77,27 @@
             <aside class="runner" aria-label="Ringkasan keahlian Ruth">
                 <div class="runner-head">
                     <span class="runner-dot" aria-hidden="true"></span>
-                    Hasil uji profil
+                    Ringkasan keahlian
                 </div>
                 <ul>
                     <li style="--i:0">
                         <span class="tick" aria-hidden="true">✓</span>
                         <div><strong>Front-end</strong><small>HTML, CSS, JS, Flutter</small></div>
-                        <em>Lulus</em>
                     </li>
                     <li style="--i:1">
                         <span class="tick" aria-hidden="true">✓</span>
                         <div><strong>Quality assurance</strong><small>Test case, UAT, Katalon</small></div>
-                        <em>Lulus</em>
                     </li>
                     <li style="--i:2">
                         <span class="tick" aria-hidden="true">✓</span>
                         <div><strong>Python & data</strong><small>Streamlit, deep learning</small></div>
-                        <em>Lulus</em>
                     </li>
                     <li style="--i:3">
                         <span class="tick" aria-hidden="true">✓</span>
                         <div><strong>IT support</strong><small>Ticketing, troubleshooting</small></div>
-                        <em>Lulus</em>
                     </li>
                 </ul>
-                <div class="runner-foot">4 dari 4 lulus. Siap bekerja.</div>
+                <div class="runner-foot">Siap berkontribusi.</div>
             </aside>
         </div>
 
@@ -112,24 +111,31 @@
 
         <div class="about-grid">
             <h2 class="about-statement">
-                Lulusan D4 Teknik Informatika Terapan dengan pengalaman front-end, quality assurance, dan pengolahan data, serta publikasi ilmiah.
+                Mengerjakan proyek dari antarmuka sampai pengujian, dan menuliskan hasilnya dalam publikasi ilmiah.
             </h2>
 
             <div class="about-body">
                 <p>
-                    Saya lulusan Universitas Logistik dan Bisnis Internasional (ULBI).
-                    Selama kuliah, saya mengerjakan project front-end, mobile development,
-                    quality assurance, dan pengolahan data, serta aktif dalam organisasi dan kepanitiaan.
+                    Saya lulusan D4 Teknik Informatika Terapan Universitas Logistik dan Bisnis Internasional (ULBI).
+                    Selama kuliah, saya mengerjakan berbagai proyek, mulai dari website dan aplikasi mobile
+                    sampai dashboard untuk mengevaluasi model deep learning.
                 </p>
                 <p>
-                    Saya tertarik pada pekerjaan yang membutuhkan ketelitian dan kemampuan memecahkan masalah,
-                    serta menghargai komunikasi yang jelas dan kerja sama tim. Saya terbuka untuk terus belajar dan berkembang.
+                    Saya pernah menjalani praktik kerja lapangan di PT Wredatama Mitra Telematika dengan tugas
+                    pencatatan aktivitas teknisi dan pemantauan tiket layanan. Saya juga mengikuti program magang
+                    di PT Pos Indonesia dengan berkontribusi pada pengembangan antarmuka aplikasi mobile
+                    Mailing Room menggunakan Flutter dan Dart.
+                </p>
+                <p>
+                    Saya terbiasa bekerja secara teliti dan terstruktur, dan masih terus belajar.
+                    Saya mencari kesempatan untuk berkembang di bidang pengembangan aplikasi,
+                    quality assurance, atau IT support.
                 </p>
 
                 <dl class="facts">
-                    <div><dt>IPK</dt><dd>3.57</dd></div>
-                    <div><dt>Project</dt><dd>9</dd></div>
-                    <div><dt>Publikasi</dt><dd>4</dd></div>
+                    <div><dt>IPK</dt><dd data-count="3.57" data-decimals="2">3.57</dd></div>
+                    <div><dt>Proyek</dt><dd data-count="9">9</dd></div>
+                    <div><dt>Publikasi</dt><dd data-count="4">4</dd></div>
                 </dl>
             </div>
         </div>
@@ -173,10 +179,10 @@
 
             <div class="job-main">
                 <h3>PT Pos Indonesia (Persero)</h3>
-                <p class="job-role">Mobile Front-End Developer Intern</p>
+                <p class="job-role">Mobile Front-end Developer Intern</p>
                 <p>
-                    Berkontribusi dalam pengembangan aplikasi mobile Mailing Room menggunakan
-                    Flutter dan Dart. Berperan sebagai Front-End Developer dalam tim pengembangan.
+                    Berkontribusi dalam pengembangan aplikasi mobile Mailing Room menggunakan Flutter dan Dart,
+                    dengan fokus pada antarmuka pengguna sebagai bagian dari tim pengembang.
                 </p>
                 <ul class="chips">
                     <li>Flutter</li><li>Dart</li><li>UI Development</li><li>Teamwork</li>
@@ -203,9 +209,9 @@
                 <h3>PT Wredatama Mitra Telematika</h3>
                 <p class="job-role">Assurance Intern (PKL)</p>
                 <p>
-                    Mencatat aktivitas teknisi di Microsoft Excel, mencatat informasi ODP,
-                    memantau ticket customer complaint dan new installation, serta mengikuti
-                    perkembangan ticket melalui sistem.
+                    Mencatat aktivitas teknisi dan informasi ODP menggunakan Microsoft Excel,
+                    memantau tiket keluhan pelanggan dan pemasangan baru, serta mengikuti
+                    perkembangan tiket melalui sistem.
                 </p>
                 <ul class="chips">
                     <li>Microsoft Excel</li><li>Ticketing</li><li>Monitoring</li><li>Service Desk</li>
@@ -227,7 +233,7 @@
                 </figure>
                 <figure>
                     <img src="images/wredatama-tiket.jpeg" alt="Aktivitas tracking ticket" loading="lazy" decoding="async">
-                    <figcaption>Tracking ticket</figcaption>
+                    <figcaption>Pelacakan tiket</figcaption>
                 </figure>
             </div>
         </article>
@@ -241,21 +247,25 @@
     <div class="container">
 
         <div class="section-heading">
-            <h2>Skills dan tools</h2>
-            <p>Kemampuan yang saya pakai di kuliah, project, organisasi, dan pengalaman kerja.</p>
+            <h2>Keahlian dan tools</h2>
+            <p>Kemampuan yang saya pakai di kuliah, proyek, organisasi, dan pengalaman kerja.</p>
         </div>
 
         <div class="bento">
             <article class="bento-card b-front">
                 <h3>Front-end development</h3>
-                <p>Membangun antarmuka web dan mobile yang rapi dan nyaman dipakai.</p>
-                <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Dart</li><li>Flutter</li></ul>
+                <dl class="skill-list">
+                    <div><dt>HTML</dt><dd>Struktur halaman</dd><span class="skill-level">Dasar</span></div>
+                    <div><dt>CSS</dt><dd>Styling dan tata letak</dd><span class="skill-level">Dasar</span></div>
+                    <div><dt>JavaScript</dt><dd>Interaktivitas</dd><span class="skill-level">Dasar</span></div>
+                    <div><dt>Flutter</dt><dd>Antarmuka aplikasi mobile</dd><span class="skill-level">Proyek dan magang</span></div>
+                </dl>
             </article>
 
             <article class="bento-card b-qa">
                 <h3>Quality assurance</h3>
-                <p>Menguji fitur, mendokumentasikan bug, dan memastikan aplikasi siap dipakai.</p>
-                <ul class="chips"><li>Manual testing</li><li>Test case</li><li>UAT</li><li>Bug documentation</li><li>Katalon Studio</li></ul>
+                <p>Menguji fungsionalitas fitur, mendokumentasikan bug yang ditemukan, dan membantu memastikan aplikasi memenuhi kebutuhan serta kriteria pengujian.</p>
+                <ul class="chips"><li>Manual testing</li><li>Test case</li><li>UAT</li><li>Dokumentasi bug</li><li>Katalon Studio</li></ul>
             </article>
 
             <article class="bento-card b-data">
@@ -266,6 +276,14 @@
             <article class="bento-card b-it">
                 <h3>IT support</h3>
                 <ul class="chips"><li>Troubleshooting</li><li>Ticket monitoring</li><li>Dokumentasi</li><li>Basic networking</li></ul>
+            </article>
+
+            <article class="bento-card b-back">
+                <h3>Database dan Go</h3>
+                <dl class="skill-list">
+                    <div><dt>Database</dt><dd>MongoDB</dd><span class="skill-level">Dasar</span></div>
+                    <div><dt>Golang</dt><dd>Pemrograman Go</dd><span class="skill-level">Dasar</span></div>
+                </dl>
             </article>
 
             <article class="bento-card b-soft">
@@ -298,8 +316,8 @@
     <div class="container">
 
         <div class="section-heading">
-            <h2>Project</h2>
-            <p>Project akademik, aplikasi, dashboard, dan pengujian yang pernah saya kerjakan.</p>
+            <h2>Proyek</h2>
+            <p>Proyek akademik, aplikasi, dashboard, dan pengujian yang pernah saya kerjakan.</p>
         </div>
 
         <div class="filters" role="group" aria-label="Filter project">
@@ -310,14 +328,16 @@
             <button type="button" class="filter" data-filter="qa" aria-pressed="false">Quality assurance</button>
         </div>
 
+        <p class="swipe-hint" id="swipe-hint" aria-hidden="true"><span>Geser untuk melihat proyek lainnya</span><strong id="project-count">1 / 9</strong></p>
+
         <div class="project-grid" id="project-grid">
 
             <article class="project-card is-wide" data-cat="web">
                 <div class="project-image"><img src="images/KaloriKu.png" alt="Tampilan KaloriKu Web Application" loading="lazy" decoding="async"></div>
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
-                    <h3>KaloriKu Web Application</h3>
-                    <p>Website layanan katering sehat yang membantu pengguna memilih paket makanan sesuai target kalori, kebutuhan, dan preferensi. Saya bertanggung jawab atas front-end, sementara rekan tim mengerjakan backend.</p>
+                    <h3>KaloriKu: Aplikasi Web</h3>
+                    <p>Platform informasi makanan dan gaya hidup sehat yang menyediakan informasi menu, komposisi, kandungan kalori, serta fitur pengelolaan menu melalui dashboard admin. Peran saya: front-end developer, sementara rekan tim mengerjakan backend.</p>
 
                     <details class="project-more">
                         <summary>Selengkapnya</summary>
@@ -326,16 +346,17 @@
                             <p>Kesibukan sehari-hari membuat banyak orang kesulitan menyiapkan makanan sehat dengan kalori dan nutrisi yang terukur. KaloriKu dirancang sebagai solusi praktis agar pengguna bisa menjalani pola makan sehat tanpa harus memasak atau menghitung kalori sendiri.</p>
                             <h4>Fitur utama</h4>
                             <ul>
-                                <li>Pemilihan paket makanan berdasarkan target, kebutuhan, dan preferensi</li>
-                                <li>Penyesuaian menu sesuai tujuan kesehatan</li>
-                                <li>Tips kesehatan harian untuk membantu pengguna tetap konsisten</li>
+                                <li>Informasi menu, komposisi, dan kandungan kalori</li>
+                                <li>Pengelolaan menu melalui dashboard admin</li>
+                                <li>Pemilihan paket makanan sesuai target dan preferensi pengguna</li>
+                                <li>Tips kesehatan harian</li>
                             </ul>
                             <h4>Peran saya</h4>
                             <p>Front-end developer: membangun antarmuka dan pengalaman pengguna website. Bagian backend dikerjakan oleh rekan tim.</p>
                         </div>
                     </details>
 
-                    <ul class="chips"><li>Front-End</li><li>UI/UX</li></ul>
+                    <ul class="chips"><li>Front-end</li><li>UI/UX</li></ul>
                     <div class="project-links">
                         <a class="project-link" href="https://github.com/Nidasakinaa/KaloriKu-FE.git" target="_blank" rel="noopener noreferrer">Kode di GitHub</a>
                     </div>
@@ -351,8 +372,8 @@
                 </div>
                 <div class="project-content">
                     <span class="tag tag-mobile">Mobile</span>
-                    <h3>KaloriKu Flutter</h3>
-                    <p>Versi mobile KaloriKu. Sebagai Front-End Developer, saya membangun antarmuka aplikasi dengan Flutter dan Dart. Karena backend sudah tidak aktif, aplikasi ditampilkan lewat video demo.</p>
+                    <h3>KaloriKu: Aplikasi Mobile</h3>
+                    <p>Aplikasi mobile berbasis Flutter yang dikembangkan untuk mendukung akses informasi KaloriKu melalui antarmuka pengguna yang dirancang agar mudah digunakan. Peran saya: front-end developer. Backend sudah tidak aktif, sehingga aplikasi ditampilkan lewat video demo.</p>
                     <ul class="chips"><li>Flutter</li><li>Dart</li></ul>
                     <div class="project-links">
                         <a class="project-link" href="https://github.com/RuthDianaPurnamasari/kaloriku_demo.git" target="_blank" rel="noopener noreferrer">Kode di GitHub</a>
@@ -365,7 +386,7 @@
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
                     <h3>Hospital Management System</h3>
-                    <p>Aplikasi manajemen rumah sakit untuk mengelola dan menyajikan informasi data rumah sakit.</p>
+                    <p>Sistem informasi rumah sakit yang mencakup fitur pendaftaran pasien, pengelolaan jadwal dokter, dan manajemen obat.</p>
                     <ul class="chips"><li>Application</li><li>UI</li></ul>
                 </div>
             </article>
@@ -374,8 +395,8 @@
                 <div class="project-image"><img src="images/Penyewaanalat.png" alt="Aplikasi Penyewaan Alat Catering" loading="lazy" decoding="async"></div>
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
-                    <h3>Penyewaan Alat Catering</h3>
-                    <p>Website penyewaan alat catering berbasis PHP dan MySQL. Proses pembuatannya didokumentasikan dalam buku tutorial yang terbit pada 2023.</p>
+                    <h3>Aplikasi Penyewaan Alat Catering</h3>
+                    <p>Aplikasi untuk membantu pengguna melihat peralatan katering, mengelola pemesanan, dan memantau status pesanan. Proses pembuatannya didokumentasikan dalam buku tutorial yang terbit pada 2023.</p>
                     <ul class="chips"><li>PHP</li><li>MySQL</li></ul>
                 </div>
             </article>
@@ -444,7 +465,7 @@
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
                     <h3>Personal Portfolio</h3>
-                    <p>Website yang sedang Anda lihat. Saya merancang dan membangunnya sendiri untuk menampilkan pengalaman, project, skills, dan organisasi.</p>
+                    <p>Website yang sedang Anda lihat. Saya merancang dan membangunnya sendiri untuk menampilkan pengalaman, proyek, keahlian, dan organisasi.</p>
                     <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
                 </div>
             </article>
@@ -546,8 +567,8 @@
 <section class="section contact" id="kontak">
     <div class="container">
         <div class="contact-box">
-            <h2>Ada posisi atau project yang cocok? Mari berdiskusi.</h2>
-            <p>Saya terbuka untuk kesempatan kerja, project, dan kolaborasi profesional.</p>
+            <h2>Ada peluang kerja atau proyek yang sesuai?</h2>
+            <p>Mari terhubung dan berdiskusi mengenai peluang kerja maupun kolaborasi profesional.</p>
 
             <div class="contact-actions">
                 <a href="mailto:ruthdianapurnamasarisagala@gmail.com" class="btn btn-light" id="email-link">ruthdianapurnamasarisagala@gmail.com</a>
@@ -567,9 +588,11 @@
 <footer class="footer">
     <div class="container footer-inner">
         <p><strong>Ruth Diana Purnamasari Sagala</strong>, S.Tr.Kom</p>
-        <p>© <span id="current-year"></span> Ruth Diana. All rights reserved.</p>
+        <p>© <span id="current-year"></span> Ruth Diana. Hak cipta dilindungi.</p>
     </div>
 </footer>
+
+<a href="#kontak" class="fab" id="fab">Hubungi saya</a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

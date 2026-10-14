@@ -171,10 +171,10 @@ p { color: var(--muted); }
   gap: 56px;
 }
 
-.hero-hello { font-size: 1.1rem; font-weight: 500; color: var(--cobalt); margin-bottom: 14px; }
+.hero-hello { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--cobalt); margin-bottom: 10px; }
 
 .hero h1 {
-  font-size: clamp(3.1rem, 7.6vw, 6.6rem);
+  font-size: clamp(2.6rem, 5.6vw, 5rem);
   font-weight: 800;
   line-height: .92;
   letter-spacing: -0.04em;
@@ -230,7 +230,7 @@ p { color: var(--muted); }
 
 .runner ul { padding: 6px 0; }
 .runner li {
-  display: grid; grid-template-columns: 24px 1fr auto; align-items: center; gap: 10px;
+  display: grid; grid-template-columns: 24px 1fr; align-items: center; gap: 10px;
   padding: 7px 16px;
   opacity: 0;
   animation: runnerIn .4s ease forwards;
@@ -365,9 +365,20 @@ p { color: var(--muted); }
 .b-qa { grid-column: span 3; background: var(--pink); border-color: var(--pink); }
 .b-data { grid-column: span 2; background: var(--butter); border-color: var(--butter); }
 .b-it { grid-column: span 2; background: var(--lilac); border-color: var(--lilac); }
-.b-soft { grid-column: span 2; background: var(--white); }
+.b-back { grid-column: span 2; background: var(--white); }
+.b-soft { grid-column: span 6; background: var(--white); }
 
 .b-front h3, .b-front p { color: var(--white); }
+
+.skill-list { display: grid; margin-top: 4px; }
+.skill-list div {
+  display: grid; grid-template-columns: 104px 1fr; gap: 12px;
+  padding: 11px 0;
+  border-top: 1.5px solid rgba(22, 20, 59, .22);
+}
+.skill-list dt { font-family: var(--font-display); font-weight: 700; }
+.skill-list dd { font-size: .95rem; opacity: .92; }
+.b-front .skill-list div { border-top-color: rgba(255, 255, 255, .35); }
 
 .tools { margin-top: 64px; }
 .tools h3 { color: var(--white); font-size: 1.4rem; margin-bottom: 20px; }
@@ -608,8 +619,8 @@ p { color: var(--muted); }
 @media (max-width: 720px) {
   .container { width: min(100% - 32px, 560px); }
   .hero { padding: 100px 0 64px; }
-  .hero-hello { margin-bottom: 8px; font-size: 1rem; }
-  .hero h1 { font-size: 2.7rem; margin-bottom: 18px; }
+  .hero-hello { margin-bottom: 6px; font-size: 1.35rem; }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 18px; }
   .hero-lead { font-size: 1.05rem; margin-bottom: 24px; }
   .hero-grid { gap: 44px; }
   .hero-visual { width: min(360px, 88%); }
@@ -623,7 +634,8 @@ p { color: var(--muted); }
   .job-photos-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
   .bento { grid-template-columns: 1fr; }
-  .bento-card, .b-front, .b-qa, .b-data, .b-it, .b-soft { grid-column: auto; }
+  .bento-card, .b-front, .b-qa, .b-data, .b-it, .b-back, .b-soft { grid-column: auto; }
+  .skill-list div { grid-template-columns: 1fr; gap: 2px; }
 
   .project-grid { grid-template-columns: 1fr; }
   .project-card.is-wide { grid-column: auto; }
@@ -649,4 +661,151 @@ p { color: var(--muted); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
   .runner li, .runner-foot { opacity: 1; }
+}
+
+
+/* =========================================================
+   INTERAKSI MOBILE
+   ========================================================= */
+html { -webkit-tap-highlight-color: transparent; }
+
+/* Progress scroll */
+.progress {
+  position: fixed; top: 0; left: 0; z-index: 1100;
+  width: 100%; height: 4px;
+  background: var(--cobalt);
+  transform: scaleX(0); transform-origin: left;
+  pointer-events: none;
+}
+
+/* Muncul halus saat di-scroll (hanya jika JS aktif) */
+.js .reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* Header menyembunyikan diri saat scroll turun (HP) */
+.site-header { transition: transform .3s ease, border-color .25s ease; }
+.site-header.is-hidden { transform: translateY(-100%); }
+
+/* Tombol mengambang */
+.fab {
+  display: none;
+  position: fixed; z-index: 900;
+  right: 16px; bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 22px;
+  background: var(--butter); color: var(--ink);
+  border: var(--border); border-radius: 999px;
+  box-shadow: var(--pop-sm);
+  font-weight: 700; font-size: .95rem;
+  opacity: 0; transform: translateY(24px); pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.fab.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.fab:active { transform: scale(.96); }
+
+/* Hint geser */
+.swipe-hint {
+  display: none;
+  align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 12px;
+  font-size: .85rem; color: var(--muted);
+}
+.swipe-hint strong { color: var(--ink); font-family: var(--font-display); font-size: .95rem; }
+.swipe-hint.is-empty { visibility: hidden; }
+
+/* Foto bisa diperbesar */
+.job-photos img, .org-photo img { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 4000;
+  display: grid; place-items: center;
+  padding: 20px;
+  background: rgba(22, 20, 59, .94);
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox figure { max-width: 100%; text-align: center; }
+.lightbox img {
+  max-width: 100%; max-height: 80vh; margin-inline: auto;
+  border: 2px solid var(--white); border-radius: 16px;
+  object-fit: contain; background: var(--lilac);
+}
+.lightbox figcaption { margin-top: 12px; color: var(--white); font-size: .95rem; }
+.lightbox-close {
+  position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: 14px;
+  width: 48px; height: 48px;
+  background: var(--white); color: var(--ink);
+  border: var(--border); border-radius: 50%;
+  font-size: 1.8rem; line-height: 1;
+}
+
+/* Layar sentuh: tidak ada hover, jadi beri umpan balik saat ditekan */
+@media (hover: none) {
+  .project-card:hover { transform: none; box-shadow: var(--pop); }
+  .project-card:hover .project-image img { transform: none; }
+  .btn:hover { transform: none; box-shadow: var(--pop-sm); }
+  .tools-list li:hover { transform: none; }
+  .btn:active, .filter:active, .project-link:active, .tools-list li:active, .contact-social a:active { transform: scale(.96); }
+  .project-card:active { transform: scale(.985); }
+}
+
+@media (pointer: coarse) {
+  .filter { min-height: 44px; padding-inline: 20px; }
+  .project-link { min-height: 44px; display: inline-flex; align-items: center; }
+  .project-more summary { min-height: 44px; }
+  .pub-link { padding: 10px 0 8px; }
+}
+
+@media (max-width: 720px) {
+  .fab { display: inline-flex; }
+  .swipe-hint { display: flex; }
+
+  /* Filter bisa digeser ke samping */
+  .filters {
+    flex-wrap: nowrap; overflow-x: auto;
+    margin-inline: -16px; padding: 4px 16px 10px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter { flex: none; }
+
+  /* Proyek menjadi carousel geser dengan snap */
+  .project-grid {
+    display: flex; align-items: flex-start; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-inline: -16px; padding: 4px 16px 20px;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .project-grid::-webkit-scrollbar { display: none; }
+  .project-card, .project-card.is-wide {
+    flex: 0 0 86%; grid-column: auto; scroll-snap-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+  .site-header.is-hidden { transform: none; }
+}
+
+.project-content .tag { align-self: flex-start; }
+
+/* Daftar keahlian: deskripsi singkat + label tingkat */
+.skill-list div { grid-template-columns: 104px 1fr auto; align-items: center; }
+.skill-level {
+  padding: 2px 11px;
+  border: 1.5px solid currentColor; border-radius: 999px;
+  font-size: .75rem; font-weight: 600; line-height: 1.5; white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .skill-list div { grid-template-columns: 1fr auto; gap: 2px 12px; }
+  .skill-list dt { grid-column: 1; grid-row: 1; }
+  .skill-level { grid-column: 2; grid-row: 1; }
+  .skill-list dd { grid-column: 1 / -1; grid-row: 2; }
 }
