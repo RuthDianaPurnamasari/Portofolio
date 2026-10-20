@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruth Diana Purnamasari Sagala | Portfolio</title>
-    <meta name="description" content="Portfolio Ruth Diana Purnamasari Sagala, S.Tr.Kom — Fresh Graduate Teknik Informatika Terapan dengan pengalaman Front-End Development, Quality Assurance, dan IT Support.">
+    <meta name="description" content="Portfolio Ruth Diana Purnamasari Sagala, S.Tr.Kom — lulusan Teknik Informatika Terapan dengan pengalaman IT support, administrasi data, quality assurance, dan pengembangan aplikasi.">
     <meta name="author" content="Ruth Diana Purnamasari Sagala">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,34 +13,39 @@
 
     <meta name="theme-color" content="#f6f4ff">
     <script>document.documentElement.classList.add("js");</script>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
-<a class="skip-link" href="#konten">Lewati ke konten</a>
+<a class="skip-link" href="#konten" data-i="skip">Lewati ke konten</a>
 
 <!-- ================= HEADER ================= -->
 <header class="site-header" id="site-header">
     <div class="container nav-container">
-        <a href="#beranda" class="brand" aria-label="Beranda Ruth Diana">
+        <a href="#beranda" class="brand" aria-label="Beranda Ruth Diana" data-ia="aBrand">
             <span class="brand-photo"><img src="images/foto2.jpeg" alt="" width="40" height="40"></span>
             <span class="brand-name">Ruth Diana</span>
         </a>
 
-        <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-navigation">
-            <span></span><span></span><span></span>
-        </button>
-
-        <nav class="main-nav" id="main-navigation" aria-label="Navigasi utama">
-            <a href="#tentang">Tentang</a>
-            <a href="#pengalaman">Pengalaman</a>
-            <a href="#skills">Keahlian</a>
-            <a href="#project">Proyek</a>
-            <a href="#organisasi">Organisasi</a>
-            <a href="#publikasi">Publikasi</a>
-            <a href="#kontak" class="nav-cta">Kontak</a>
+        <nav class="main-nav" id="main-navigation" aria-label="Navigasi utama" data-ia="aNav">
+            <a href="#tentang" data-i="nA">Tentang</a>
+            <a href="#pengalaman" data-i="nE">Pengalaman</a>
+            <a href="#skills" data-i="nS">Keahlian</a>
+            <a href="#project" data-i="nP">Proyek</a>
+            <a href="#organisasi" data-i="nO">Organisasi</a>
+            <a href="#publikasi" data-i="nU">Publikasi</a>
+            <a href="#kontak" class="nav-cta" data-i="nC">Kontak</a>
         </nav>
+
+        <div class="nav-tools">
+            <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch language to English">
+                <span class="lang-id is-on">ID</span><span class="lang-en">EN</span>
+            </button>
+            <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
 </header>
 
@@ -51,19 +56,27 @@
     <div class="container hero-grid">
 
         <div class="hero-text">
-            <p class="hero-hello">Halo <span aria-hidden="true">😊</span></p>
+            <p class="hero-eyebrow" data-i="eyebrow">Portofolio profesional</p>
+            <p class="hero-hello"><span data-i="hello">Halo, saya</span> <span aria-hidden="true">👋</span></p>
             <h1>
-                <span>Saya Ruth Diana</span>
+                <span>Ruth Diana</span>
                 <span>Purnamasari</span>
                 <span>Sagala</span>
             </h1>
-            <p class="hero-lead">
-                Lulusan D4 Teknik Informatika Terapan dengan pengalaman dalam pengembangan antarmuka aplikasi
-                dan quality assurance. Saya tertarik untuk terus mengembangkan keterampilan di bidang teknologi informasi.
+            <p class="hero-role" data-i="role">Lulusan D4 Teknik Informatika Terapan | Front-End &amp; Mobile Developer, QA Software, IT Support</p>
+            <p class="hero-lead" data-i="lead">
+                Lulusan D4 Teknik Informatika Terapan dari Universitas Logistik dan Bisnis Internasional dengan pengalaman
+                magang sebagai front-end developer aplikasi mobile di PT Pos Indonesia dalam tim tiga orang, serta PKL di bidang
+                pencatatan data teknisi dan pemantauan tiket layanan. Memiliki pengalaman proyek dalam front-end development,
+                quality assurance, dan pengolahan data, serta terbiasa bekerja secara teliti, terstruktur, dan kolaboratif.
             </p>
+            <ul class="chips hero-focus" aria-label="Fokus" data-ia="aFocus">
+                <li>Front-End Development</li><li>Mobile Development</li><li>Quality Assurance</li><li>IT Support</li><li>Data &amp; AI</li>
+            </ul>
             <div class="hero-actions">
-                <a href="#project" class="btn btn-primary">Lihat proyek</a>
-                <a href="#kontak" class="btn btn-ghost">Hubungi saya</a>
+                <a href="#pengalaman" class="btn btn-primary" data-i="b1">Lihat Pengalaman &amp; Proyek</a>
+                <a href="files/CV_Ruth_Diana_EN.pdf" class="btn btn-ghost" download data-cv data-href-id="files/CV_Ruth_Diana_EN.pdf" data-href-en="files/CV_Ruth_Diana_EN.pdf" data-i="bcv">Unduh CV (English)</a>
+                <a href="#kontak" class="btn btn-ghost" data-i="b2">Hubungi Saya</a>
             </div>
         </div>
 
@@ -72,32 +85,21 @@
                 <img src="images/foto2.jpeg" alt="Foto Ruth Diana Purnamasari" fetchpriority="high">
             </div>
 
-            <div class="sticker" aria-hidden="true">Lulusan ULBI<br>2026</div>
+            <div class="sticker" aria-hidden="true" data-i="sticker">Lulusan ULBI<br>2026</div>
 
-            <aside class="runner" aria-label="Ringkasan keahlian Ruth">
-                <div class="runner-head">
-                    <span class="runner-dot" aria-hidden="true"></span>
-                    Ringkasan keahlian
-                </div>
+            <aside class="runner" aria-label="Ringkasan keahlian" data-ia="aRun">
+                <div class="runner-head"><span class="runner-dot" aria-hidden="true"></span><span data-i="rh">Ringkasan keahlian</span></div>
                 <ul>
-                    <li style="--i:0">
-                        <span class="tick" aria-hidden="true">✓</span>
-                        <div><strong>Front-end</strong><small>HTML, CSS, JS, Flutter</small></div>
-                    </li>
-                    <li style="--i:1">
-                        <span class="tick" aria-hidden="true">✓</span>
-                        <div><strong>Quality assurance</strong><small>Test case, UAT, Katalon</small></div>
-                    </li>
-                    <li style="--i:2">
-                        <span class="tick" aria-hidden="true">✓</span>
-                        <div><strong>Python & data</strong><small>Streamlit, deep learning</small></div>
-                    </li>
-                    <li style="--i:3">
-                        <span class="tick" aria-hidden="true">✓</span>
-                        <div><strong>IT support</strong><small>Ticketing, troubleshooting</small></div>
-                    </li>
+                    <li style="--i:0"><span class="tick" aria-hidden="true">✓</span>
+                        <div><strong>Front-end &amp; mobile</strong><small>Flutter, Dart, HTML, CSS, JS</small></div></li>
+                    <li style="--i:1"><span class="tick" aria-hidden="true">✓</span>
+                        <div><strong>IT support</strong><small data-i="r2s">Tiket, troubleshooting dasar</small></div></li>
+                    <li style="--i:2"><span class="tick" aria-hidden="true">✓</span>
+                        <div><strong>Quality assurance</strong><small>Test case, UAT, Katalon</small></div></li>
+                    <li style="--i:3"><span class="tick" aria-hidden="true">✓</span>
+                        <div><strong data-i="r4t">Administrasi &amp; data</strong><small data-i="r1s">Excel, Word, dokumentasi</small></div></li>
                 </ul>
-                <div class="runner-foot">Siap berkontribusi.</div>
+                <div class="runner-foot" data-i="rf">Siap berkontribusi.</div>
             </aside>
         </div>
 
@@ -110,51 +112,51 @@
     <div class="container">
 
         <div class="about-grid">
-            <h2 class="about-statement">
+            <h2 class="about-statement" data-i="aS">
                 Mengerjakan proyek dari antarmuka sampai pengujian, dan menuliskan hasilnya dalam publikasi ilmiah.
             </h2>
 
             <div class="about-body">
-                <p>
+                <p data-i="a1">
                     Saya lulusan D4 Teknik Informatika Terapan Universitas Logistik dan Bisnis Internasional (ULBI).
                     Selama kuliah, saya mengerjakan berbagai proyek, mulai dari website dan aplikasi mobile
                     sampai dashboard untuk mengevaluasi model deep learning.
                 </p>
-                <p>
-                    Saya pernah menjalani praktik kerja lapangan di PT Wredatama Mitra Telematika dengan tugas
+                <p data-i="a2">
+                    Saat SMK, saya menjalani praktik kerja lapangan (PKL) di PT Wredatama Mitra Telematika dengan tugas
                     pencatatan aktivitas teknisi dan pemantauan tiket layanan. Saya juga mengikuti program magang
                     di PT Pos Indonesia dengan berkontribusi pada pengembangan antarmuka aplikasi mobile
                     Mailing Room menggunakan Flutter dan Dart.
                 </p>
-                <p>
+                <p data-i="a3">
                     Saya terbiasa bekerja secara teliti dan terstruktur, dan masih terus belajar.
-                    Saya mencari kesempatan untuk berkembang di bidang pengembangan aplikasi,
-                    quality assurance, atau IT support.
+                    Saya mencari kesempatan untuk berkembang di bidang administrasi IT, IT support,
+                    quality assurance, atau pengembangan aplikasi.
                 </p>
 
                 <dl class="facts">
-                    <div><dt>IPK</dt><dd data-count="3.57" data-decimals="2">3.57</dd></div>
-                    <div><dt>Proyek</dt><dd data-count="9">9</dd></div>
-                    <div><dt>Publikasi</dt><dd data-count="4">4</dd></div>
+                    <div><dt data-i="fG">IPK</dt><dd data-count="3.57" data-decimals="2">3.57</dd></div>
+                    <div><dt data-i="fP">Proyek</dt><dd data-count="9">9</dd></div>
+                    <div><dt data-i="fU">Publikasi &amp; buku</dt><dd data-count="4">4</dd></div>
                 </dl>
             </div>
         </div>
 
         <div class="education">
-            <h3>Pendidikan</h3>
+            <h3 data-i="eduH">Pendidikan</h3>
             <ol class="timeline">
                 <li>
                     <span class="timeline-date">2022 – 2026</span>
                     <div>
                         <h4>Universitas Logistik dan Bisnis Internasional</h4>
-                        <p>D4 Teknik Informatika Terapan, IPK 3.57 / 4.00</p>
+                        <p data-i="ed1">D4 Teknik Informatika Terapan, IPK 3.57 / 4.00</p>
                     </div>
                 </li>
                 <li>
                     <span class="timeline-date">2017 – 2020</span>
                     <div>
                         <h4>SMK Bina Putera Nusantara</h4>
-                        <p>Teknik Transmisi Telekomunikasi</p>
+                        <p data-i="ed2">Teknik Transmisi Telekomunikasi</p>
                     </div>
                 </li>
             </ol>
@@ -169,8 +171,8 @@
     <div class="container">
 
         <div class="section-heading">
-            <h2>Pengalaman</h2>
-            <p>Dua pengalaman magang yang membentuk cara kerja saya: teliti, komunikatif, dan terbiasa bekerja dalam tim.</p>
+            <h2 data-i="xH">Pengalaman</h2>
+            <p data-i="xP">Magang di PT Pos Indonesia dan PKL saat SMK di PT Wredatama, dua pengalaman yang membentuk cara kerja saya: teliti, komunikatif, dan terbiasa bekerja dalam tim.</p>
         </div>
 
         <!-- POS INDONESIA -->
@@ -180,9 +182,10 @@
             <div class="job-main">
                 <h3>PT Pos Indonesia (Persero)</h3>
                 <p class="job-role">Mobile Front-end Developer Intern</p>
-                <p>
-                    Berkontribusi dalam pengembangan aplikasi mobile Mailing Room menggunakan Flutter dan Dart,
-                    dengan fokus pada antarmuka pengguna sebagai bagian dari tim pengembang.
+                <p data-i="j1">
+                    Berkontribusi sebagai salah satu dari dua front-end developer dalam tim tiga orang untuk aplikasi mobile Mailing Room dengan Flutter dan Dart.
+                    Mengerjakan antarmuka registrasi, login, dashboard, pengiriman surat, detail surat, dan pelacakan surat,
+                    serta berkoordinasi dengan back-end developer dan sesama front-end developer agar tampilan sesuai kebutuhan sistem.
                 </p>
                 <ul class="chips">
                     <li>Flutter</li><li>Dart</li><li>UI Development</li><li>Teamwork</li>
@@ -192,11 +195,11 @@
             <div class="job-photos">
                 <figure>
                     <img src="images/pos-tim.jpeg" alt="Kegiatan bersama tim saat magang di PT Pos Indonesia" loading="lazy" decoding="async">
-                    <figcaption>Kegiatan bersama tim</figcaption>
+                    <figcaption data-i="c1">Kegiatan bersama tim</figcaption>
                 </figure>
                 <figure>
                     <img src="images/pos-presentasi.jpeg" alt="Presentasi dan demonstrasi aplikasi saat magang" loading="lazy" decoding="async">
-                    <figcaption>Presentasi dan demo aplikasi</figcaption>
+                    <figcaption data-i="c2">Presentasi dan demo aplikasi</figcaption>
                 </figure>
             </div>
         </article>
@@ -207,11 +210,10 @@
 
             <div class="job-main">
                 <h3>PT Wredatama Mitra Telematika</h3>
-                <p class="job-role">Assurance Intern (PKL)</p>
-                <p>
-                    Mencatat aktivitas teknisi dan informasi ODP menggunakan Microsoft Excel,
-                    memantau tiket keluhan pelanggan dan pemasangan baru, serta mengikuti
-                    perkembangan tiket melalui sistem.
+                <p class="job-role" data-i="j2r">Assurance Intern (PKL saat SMK)</p>
+                <p data-i="j2">
+                    Saat menjalani PKL di SMK, saya mencatat dan memantau tiket keluhan pelanggan serta permintaan pemasangan baru,
+                    merekap aktivitas dan kehadiran teknisi menggunakan Microsoft Excel, serta mencatat informasi ODP.
                 </p>
                 <ul class="chips">
                     <li>Microsoft Excel</li><li>Ticketing</li><li>Monitoring</li><li>Service Desk</li>
@@ -221,19 +223,19 @@
             <div class="job-photos job-photos-4">
                 <figure>
                     <img src="images/wredatama-1.jpeg" alt="Kegiatan PKL di PT Wredatama Mitra Telematika" loading="lazy" decoding="async">
-                    <figcaption>Aktivitas kerja</figcaption>
+                    <figcaption data-i="c3">Aktivitas kerja</figcaption>
                 </figure>
                 <figure>
                     <img src="images/wredatama-2.jpg" alt="Aktivitas monitoring saat PKL" loading="lazy" decoding="async">
-                    <figcaption>Pemantauan</figcaption>
+                    <figcaption data-i="c4">Pemantauan</figcaption>
                 </figure>
                 <figure>
                     <img src="images/wredatama-teknisi.jpeg" alt="Aktivitas pengecekan teknisi" loading="lazy" decoding="async">
-                    <figcaption>Pemantauan teknisi</figcaption>
+                    <figcaption data-i="c5">Pemantauan teknisi</figcaption>
                 </figure>
                 <figure>
                     <img src="images/wredatama-tiket.jpeg" alt="Aktivitas tracking ticket" loading="lazy" decoding="async">
-                    <figcaption>Pelacakan tiket</figcaption>
+                    <figcaption data-i="c6">Pelacakan tiket</figcaption>
                 </figure>
             </div>
         </article>
@@ -247,63 +249,64 @@
     <div class="container">
 
         <div class="section-heading">
-            <h2>Keahlian dan tools</h2>
-            <p>Kemampuan yang saya pakai di kuliah, proyek, organisasi, dan pengalaman kerja.</p>
+            <h2 data-i="sH">Keahlian dan tools</h2>
+            <p data-i="sP">Dikelompokkan berdasarkan bidang. Level menunjukkan kemampuan saya saat ini.</p>
         </div>
 
         <div class="bento">
-            <article class="bento-card b-front">
-                <h3>Front-end development</h3>
+            <article class="bento-card b-admin">
+                <h3 data-i="k1h">Administrasi &amp; data</h3>
                 <dl class="skill-list">
-                    <div><dt>HTML</dt><dd>Struktur halaman</dd><span class="skill-level">Dasar</span></div>
-                    <div><dt>CSS</dt><dd>Styling dan tata letak</dd><span class="skill-level">Dasar</span></div>
-                    <div><dt>JavaScript</dt><dd>Interaktivitas</dd><span class="skill-level">Dasar</span></div>
-                    <div><dt>Flutter</dt><dd>Antarmuka aplikasi mobile</dd><span class="skill-level">Proyek dan magang</span></div>
+                    <div><dt>Excel</dt><dd data-i="k1e">Rekap data dan pencatatan</dd><span class="skill-level" data-i="lvB">Dasar</span></div>
                 </dl>
-            </article>
-
-            <article class="bento-card b-qa">
-                <h3>Quality assurance</h3>
-                <p>Menguji fungsionalitas fitur, mendokumentasikan bug yang ditemukan, dan membantu memastikan aplikasi memenuhi kebutuhan serta kriteria pengujian.</p>
-                <ul class="chips"><li>Manual testing</li><li>Test case</li><li>UAT</li><li>Dokumentasi bug</li><li>Katalon Studio</li></ul>
-            </article>
-
-            <article class="bento-card b-data">
-                <h3>Python & data</h3>
-                <ul class="chips"><li>Python</li><li>Streamlit</li><li>Deep learning</li><li>Dashboard</li></ul>
+                <ul class="chips"><li>Microsoft Word</li><li data-i="k1a">Pencatatan data</li><li data-i="k1b">Dokumentasi</li><li data-i="k1c">Rekapitulasi data</li></ul>
             </article>
 
             <article class="bento-card b-it">
                 <h3>IT support</h3>
-                <ul class="chips"><li>Troubleshooting</li><li>Ticket monitoring</li><li>Dokumentasi</li><li>Basic networking</li></ul>
+                <ul class="chips"><li data-i="k2a">Monitoring tiket</li><li data-i="k2b">Troubleshooting dasar</li><li>Basic networking</li><li data-i="k2d">Cisco (dasar)</li><li data-i="k2c">Dokumentasi teknis</li></ul>
             </article>
 
-            <article class="bento-card b-back">
-                <h3>Database dan Go</h3>
+            <article class="bento-card b-qa">
+                <h3>Quality assurance</h3>
+                <p data-i="k3p">Menguji fitur, menulis test case, dan mendokumentasikan bug yang ditemukan.</p>
+                <ul class="chips"><li>Manual testing</li><li>Test case</li><li>UAT</li><li data-i="k3b">Dokumentasi bug</li><li>Katalon Studio</li></ul>
+            </article>
+
+            <article class="bento-card b-dev">
+                <h3 data-i="k4h">Pengembangan aplikasi</h3>
                 <dl class="skill-list">
-                    <div><dt>Database</dt><dd>MongoDB</dd><span class="skill-level">Dasar</span></div>
-                    <div><dt>Golang</dt><dd>Pemrograman Go</dd><span class="skill-level">Dasar</span></div>
+                    <div><dt>Flutter</dt><dd data-i="kF">Antarmuka aplikasi mobile</dd><span class="skill-level" data-i="lvP">Proyek dan magang</span></div>
+                    <div><dt>HTML</dt><dd data-i="kH">Struktur halaman</dd><span class="skill-level" data-i="lvB">Dasar</span></div>
+                    <div><dt>CSS</dt><dd data-i="kC">Styling dan tata letak</dd><span class="skill-level" data-i="lvB">Dasar</span></div>
+                    <div><dt>JavaScript</dt><dd data-i="kJ">Interaktivitas</dd><span class="skill-level" data-i="lvB">Dasar</span></div>
+                    <div><dt>Golang</dt><dd data-i="kG">Pemrograman Go</dd><span class="skill-level" data-i="lvB">Dasar</span></div>
                 </dl>
             </article>
 
+            <article class="bento-card b-data">
+                <h3>Data &amp; AI</h3>
+                <ul class="chips"><li>Python</li><li>Streamlit</li><li>Deep learning</li><li>Dashboard</li></ul>
+            </article>
+
             <article class="bento-card b-soft">
-                <h3>Cara kerja</h3>
-                <ul class="chips"><li>Teliti</li><li>Problem solving</li><li>Komunikasi</li><li>Teamwork</li></ul>
+                <h3 data-i="wH">Cara kerja</h3>
+                <ul class="chips"><li data-i="w1">Teliti</li><li>Problem solving</li><li data-i="w3">Komunikasi</li><li>Teamwork</li><li data-i="w4">Manajemen waktu</li></ul>
             </article>
         </div>
 
         <div class="tools">
-            <h3>Tools yang pernah saya pakai</h3>
+            <h3 data-i="tH">Tools pendukung</h3>
             <ul class="tools-list">
-                <li><span class="tool-badge" style="--c:#2B579A" aria-hidden="true">W</span>Microsoft Word</li>
                 <li><span class="tool-badge" style="--c:#217346" aria-hidden="true">X</span>Microsoft Excel</li>
+                <li><span class="tool-badge" style="--c:#2B579A" aria-hidden="true">W</span>Microsoft Word</li>
                 <li><span class="tool-badge" style="--c:#C43E1C" aria-hidden="true">P</span>PowerPoint</li>
-                <li><svg class="tool-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="#007ACC" d="M17 2.5l4.5 2.2v14.6L17 21.5 7.2 12.6 3.6 15.4 2 14.5V9.5l1.6-.9 3.6 2.8L17 2.5zm0 5.2l-6.1 4.9 6.1 4.9V7.7z"/></svg>VS Code</li>
                 <li><img src="https://cdn.simpleicons.org/github/181717" alt="" loading="lazy" onerror="this.remove()">GitHub</li>
                 <li><img src="https://cdn.simpleicons.org/trello/0052CC" alt="" loading="lazy" onerror="this.remove()">Trello</li>
-                <li><span class="tool-badge" style="--c:#00A8B0" aria-hidden="true">C</span>Canva</li>
-                <li><img src="https://cdn.simpleicons.org/androidstudio/3DDC84" alt="" loading="lazy" onerror="this.remove()">Android Studio</li>
+                <li><svg class="tool-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="#007ACC" d="M17 2.5l4.5 2.2v14.6L17 21.5 7.2 12.6 3.6 15.4 2 14.5V9.5l1.6-.9 3.6 2.8L17 2.5zm0 5.2l-6.1 4.9 6.1 4.9V7.7z"/></svg>VS Code</li>
                 <li><span class="tool-badge" style="--c:#4F46E5" aria-hidden="true">K</span>Katalon Studio</li>
+                <li><img src="https://cdn.simpleicons.org/androidstudio/3DDC84" alt="" loading="lazy" onerror="this.remove()">Android Studio</li>
+                <li><span class="tool-badge" style="--c:#00A8B0" aria-hidden="true">C</span>Canva</li>
             </ul>
         </div>
 
@@ -316,156 +319,200 @@
     <div class="container">
 
         <div class="section-heading">
-            <h2>Proyek</h2>
-            <p>Proyek akademik, aplikasi, dashboard, dan pengujian yang pernah saya kerjakan.</p>
+            <h2 data-i="pH">Proyek</h2>
+            <p data-i="pP">Proyek akademik, aplikasi, dashboard, dan pengujian yang pernah saya kerjakan.</p>
         </div>
 
-        <div class="filters" role="group" aria-label="Filter project">
-            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Semua</button>
+        <div class="filters" role="group" aria-label="Filter project" data-ia="aFil">
+            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true" data-i="fAll">Semua</button>
             <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
             <button type="button" class="filter" data-filter="mobile" aria-pressed="false">Mobile</button>
             <button type="button" class="filter" data-filter="dl" aria-pressed="false">Deep learning</button>
             <button type="button" class="filter" data-filter="qa" aria-pressed="false">Quality assurance</button>
         </div>
 
-        <p class="swipe-hint" id="swipe-hint" aria-hidden="true"><span>Geser untuk melihat proyek lainnya</span><strong id="project-count">1 / 9</strong></p>
+        <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+
+        <p class="swipe-hint" id="swipe-hint" aria-hidden="true"><span data-i="hint">Geser untuk melihat proyek lainnya</span><strong id="project-count">1 / 9</strong></p>
 
         <div class="project-grid" id="project-grid">
 
+            <!-- 1. KaloriKu Web -->
             <article class="project-card is-wide" data-cat="web">
                 <div class="project-image"><img src="images/KaloriKu.png" alt="Tampilan KaloriKu Web Application" loading="lazy" decoding="async"></div>
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
-                    <h3>KaloriKu: Aplikasi Web</h3>
-                    <p>Platform informasi makanan dan gaya hidup sehat yang menyediakan informasi menu, komposisi, kandungan kalori, serta fitur pengelolaan menu melalui dashboard admin. Peran saya: front-end developer, sementara rekan tim mengerjakan backend.</p>
-
-                    <details class="project-more">
-                        <summary>Selengkapnya</summary>
-                        <div class="project-more-body">
-                            <h4>Latar belakang</h4>
-                            <p>Kesibukan sehari-hari membuat banyak orang kesulitan menyiapkan makanan sehat dengan kalori dan nutrisi yang terukur. KaloriKu dirancang sebagai solusi praktis agar pengguna bisa menjalani pola makan sehat tanpa harus memasak atau menghitung kalori sendiri.</p>
-                            <h4>Fitur utama</h4>
-                            <ul>
-                                <li>Informasi menu, komposisi, dan kandungan kalori</li>
-                                <li>Pengelolaan menu melalui dashboard admin</li>
-                                <li>Pemilihan paket makanan sesuai target dan preferensi pengguna</li>
-                                <li>Tips kesehatan harian</li>
-                            </ul>
-                            <h4>Peran saya</h4>
-                            <p>Front-end developer: membangun antarmuka dan pengalaman pengguna website. Bagian backend dikerjakan oleh rekan tim.</p>
-                        </div>
-                    </details>
-
+                    <h3 data-i="p1t">KaloriKu: Aplikasi Web Pencatatan Kalori</h3>
+                    <p data-i="p1g">Mengembangkan antarmuka pengguna aplikasi KaloriKu untuk mendukung pencatatan dan pemantauan kalori. Dikerjakan secara kolaboratif bersama rekan tim yang bertanggung jawab pada bagian back-end.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd data-i="p1r">Front-End Developer, tim 2 orang.</dd></div>
+                        <div><dt data-i="lblK">Kontribusi saya</dt><dd><ul>
+                            <li data-i="p1w1">Mengembangkan tampilan dan antarmuka pengguna aplikasi web.</li>
+                            <li data-i="p1w2">Mengimplementasikan komponen front-end sesuai kebutuhan fitur aplikasi.</li>
+                            <li data-i="p1w3">Berkolaborasi dengan rekan tim dalam pengembangan aplikasi.</li>
+                        </ul></dd></div>
+                    </dl>
                     <ul class="chips"><li>Front-end</li><li>UI/UX</li></ul>
                     <div class="project-links">
-                        <a class="project-link" href="https://github.com/Nidasakinaa/KaloriKu-FE.git" target="_blank" rel="noopener noreferrer">Kode di GitHub</a>
+                        <a class="project-link" href="https://github.com/Nidasakinaa/KaloriKu-FE.git" target="_blank" rel="noopener noreferrer" data-i="lnkT">Repositori tim di GitHub</a>
                     </div>
                 </div>
             </article>
 
+            <!-- 2. KaloriKu Mobile -->
             <article class="project-card" data-cat="mobile">
                 <div class="project-image project-video">
                     <video controls playsinline preload="metadata" poster="images/Kalorikuflutter.png">
                         <source src="videos/demo_mobile_kaloriku.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung pemutaran video.
                     </video>
                 </div>
                 <div class="project-content">
                     <span class="tag tag-mobile">Mobile</span>
-                    <h3>KaloriKu: Aplikasi Mobile</h3>
-                    <p>Aplikasi mobile berbasis Flutter yang dikembangkan untuk mendukung akses informasi KaloriKu melalui antarmuka pengguna yang dirancang agar mudah digunakan. Peran saya: front-end developer. Backend sudah tidak aktif, sehingga aplikasi ditampilkan lewat video demo.</p>
+                    <h3 data-i="p2t">KaloriKu: Aplikasi Mobile</h3>
+                    <p data-i="p2g">Aplikasi mobile Flutter untuk mengakses informasi KaloriKu dengan antarmuka yang mudah digunakan.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd>Front-end developer.</dd></div>
+                        <div><dt data-i="lblW">Pekerjaan utama</dt><dd data-i="p2w">Antarmuka aplikasi dengan Flutter dan Dart.</dd></div>
+                    </dl>
+                    <p class="project-note" data-i="p2n">Backend sudah tidak aktif, sehingga aplikasi ditampilkan lewat video demo.</p>
                     <ul class="chips"><li>Flutter</li><li>Dart</li></ul>
                     <div class="project-links">
-                        <a class="project-link" href="https://github.com/RuthDianaPurnamasari/kaloriku_demo.git" target="_blank" rel="noopener noreferrer">Kode di GitHub</a>
+                        <a class="project-link" href="https://github.com/RuthDianaPurnamasari/kaloriku_demo.git" target="_blank" rel="noopener noreferrer" data-i="lnkG">Kode di GitHub</a>
                     </div>
                 </div>
             </article>
 
+            <!-- 3. Hospital -->
             <article class="project-card" data-cat="web">
-                <div class="project-image"><img src="images/hospital.png" alt="Hospital Management System" loading="lazy" decoding="async"></div>
+                <div class="project-image">
+                    <img src="images/hospital.png" alt="Hospital Management System" loading="lazy" decoding="async">
+                </div>
+
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
-                    <h3>Hospital Management System</h3>
-                    <p>Sistem informasi rumah sakit yang mencakup fitur pendaftaran pasien, pengelolaan jadwal dokter, dan manajemen obat.</p>
-                    <ul class="chips"><li>Application</li><li>UI</li></ul>
+                    <h3 data-i="p3t">Hospital Management System</h3>
+
+                    <p data-i="p3g">Sistem informasi rumah sakit dengan fitur pendaftaran pasien, pengelolaan jadwal dokter, dan manajemen obat.</p>
+
+                    <dl class="project-facts">
+                        <div>
+                            <dt data-i="lblR">Peran saya</dt>
+                            <dd data-i="p3r">Front-End Developer.</dd>
+                        </div>
+                        <div>
+                            <dt data-i="lblW">Pekerjaan utama</dt>
+                            <dd data-i="p3w">Mengembangkan antarmuka pengguna untuk mendukung tampilan dan interaksi fitur sistem informasi rumah sakit.</dd>
+                        </div>
+                    </dl>
+
+                    <ul class="chips">
+                        <li>Front-End</li>
+                        <li>UI Development</li>
+                    </ul>
                 </div>
             </article>
 
+            <!-- 4. Catering -->
             <article class="project-card" data-cat="web">
                 <div class="project-image"><img src="images/Penyewaanalat.png" alt="Aplikasi Penyewaan Alat Catering" loading="lazy" decoding="async"></div>
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
-                    <h3>Aplikasi Penyewaan Alat Catering</h3>
-                    <p>Aplikasi untuk membantu pengguna melihat peralatan katering, mengelola pemesanan, dan memantau status pesanan. Proses pembuatannya didokumentasikan dalam buku tutorial yang terbit pada 2023.</p>
+                    <h3 data-i="p4t">Aplikasi Penyewaan Alat Catering</h3>
+                    <p data-i="p4g">Aplikasi untuk melihat peralatan katering, mengelola pemesanan, dan memantau status pesanan.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd data-i="p4r">Front-end developer. Juga menuliskan prosesnya dalam buku tutorial (terbit 2023).</dd></div>
+                    </dl>
                     <ul class="chips"><li>PHP</li><li>MySQL</li></ul>
                 </div>
             </article>
 
+            <!-- 5. Arsip surat -->
             <article class="project-card" data-cat="dl">
                 <div class="project-image"><img src="images/streamlit-arsip-surat.png" alt="Dashboard Klasifikasi Arsip Surat" loading="lazy" decoding="async"></div>
                 <div class="project-content">
                     <span class="tag tag-dl">Deep learning</span>
-                    <h3>Klasifikasi Arsip Surat</h3>
-                    <p>Dashboard interaktif berbasis Streamlit untuk menampilkan hasil evaluasi model deep learning pada klasifikasi arsip surat. Hasilnya dipublikasikan di jurnal Nuansa Informatika.</p>
+                    <h3 data-i="p5t">Klasifikasi Arsip Surat</h3>
+                    <p data-i="p5g">Dashboard interaktif Streamlit untuk menampilkan hasil evaluasi model deep learning pada klasifikasi arsip surat.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd data-i="p5r">Membangun dashboard dan menuliskan hasilnya di jurnal Nuansa Informatika.</dd></div>
+                    </dl>
                     <ul class="chips"><li>Python</li><li>Streamlit</li></ul>
                     <div class="project-links">
-                        <a class="project-link" href="https://github.com/RuthDianaPurnamasari/Intern1_Klasifikasi_Surat.git" target="_blank" rel="noopener noreferrer">Kode di GitHub</a>
+                        <a class="project-link" href="https://github.com/RuthDianaPurnamasari/Intern1_Klasifikasi_Surat.git" target="_blank" rel="noopener noreferrer" data-i="lnkG">Kode di GitHub</a>
                     </div>
                 </div>
             </article>
 
+            <!-- 6. IDIBIZ -->
             <article class="project-card is-wide" data-cat="qa">
                 <div class="project-image project-video">
                     <video controls playsinline preload="metadata" poster="images/idibiz-cover.png">
                         <source src="videos/test-register.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung pemutaran video.
                     </video>
                 </div>
                 <div class="project-content">
                     <span class="tag tag-qa">Quality assurance</span>
-                    <h3>IDIBIZ: pengujian aplikasi</h3>
-                    <p>Manual testing, test case, UAT, dan dokumentasi bug. Video menunjukkan pengujian fitur register.</p>
+                    <h3 data-i="p6t">IDIBIZ: pengujian website</h3>
+                    <p data-i="p6g">Pengujian website IDIBIZ untuk memastikan fitur berjalan sesuai kebutuhan.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd>Quality assurance.</dd></div>
+                        <div><dt data-i="lblW">Pekerjaan utama</dt><dd data-i="p6w">Manual testing dan pengujian otomatis dengan Katalon Studio, test case, UAT, dan dokumentasi bug. Video menunjukkan pengujian fitur register.</dd></div>
+                    </dl>
                     <ul class="chips"><li>QA</li><li>Katalon Studio</li><li>UAT</li></ul>
                 </div>
             </article>
 
+            <!-- 7. Berita -->
             <article class="project-card" data-cat="dl">
                 <div class="project-image"><img src="images/streamlit-klasifikasi-berita.png" alt="Dashboard Klasifikasi Berita Berbahasa Indonesia" loading="lazy" decoding="async"></div>
                 <div class="project-content">
                     <span class="tag tag-dl">Deep learning</span>
-                    <h3>Klasifikasi Berita Indonesia</h3>
-                    <p>Dashboard Streamlit untuk mengevaluasi dan membandingkan model CNN dan Attention-BiLSTM pada klasifikasi berita berbahasa Indonesia dengan variasi representasi teks. Penelitian ini diterima di Jurnal Ilmiah Informatika Komputer.</p>
+                    <h3 data-i="p7t">Klasifikasi Berita Indonesia</h3>
+                    <p data-i="p7g">Dashboard Streamlit untuk membandingkan model CNN dan Attention-BiLSTM pada klasifikasi berita berbahasa Indonesia dengan variasi representasi teks.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd data-i="p7r">Penelitian tugas akhir dan pengembangan dashboard. Diterima di Jurnal Ilmiah Informatika Komputer.</dd></div>
+                    </dl>
                     <ul class="chips"><li>CNN</li><li>Attention-BiLSTM</li></ul>
                     <div class="project-links">
-                        <a class="project-link" href="https://github.com/RuthDianaPurnamasari/TA_KLASIFIKASI_DOKUMEN_BERITA.git" target="_blank" rel="noopener noreferrer">Kode di GitHub</a>
+                        <a class="project-link" href="https://github.com/RuthDianaPurnamasari/TA_KLASIFIKASI_DOKUMEN_BERITA.git" target="_blank" rel="noopener noreferrer" data-i="lnkG">Kode di GitHub</a>
                     </div>
                 </div>
             </article>
 
+            <!-- 8. Mailing Room -->
             <article class="project-card" data-cat="mobile">
                 <div class="project-image project-video">
                     <video controls playsinline preload="metadata" poster="images/mailingroom.jpeg">
                         <source src="videos/demo_mobile_mailingroom.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung pemutaran video.
                     </video>
                 </div>
                 <div class="project-content">
                     <span class="tag tag-mobile">Mobile</span>
                     <h3>Mailing Room Mobile App</h3>
-                    <p>Aplikasi mobile untuk mengelola surat masuk, surat keluar, tracking, dan pengiriman. Saya mengerjakan bagian front-end. Backend sudah tidak aktif, jadi ditampilkan lewat video demo.</p>
+                    <p data-i="p8g">Aplikasi mobile untuk mengelola surat masuk, surat keluar, tracking, dan pengiriman.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd data-i="p8r">Front-end developer dalam tim tiga orang (magang di PT Pos Indonesia).</dd></div>
+                        <div><dt data-i="lblW">Pekerjaan utama</dt><dd data-i="p8w">Antarmuka registrasi, login, dashboard, pengiriman surat, detail surat, dan pelacakan surat.</dd></div>
+                    </dl>
+                    <p class="project-note" data-i="p8n">Demo aplikasi ditampilkan melalui video.</p>
                     <ul class="chips"><li>Flutter</li><li>Dart</li></ul>
                     <div class="project-links">
-                        <a class="project-link" href="https://github.com/Mailing-Room/FrontendMailingRoom.git" target="_blank" rel="noopener noreferrer">Kode di GitHub</a>
+                        <a class="project-link" href="https://github.com/Mailing-Room/FrontendMailingRoom.git" target="_blank" rel="noopener noreferrer" data-i="lnkG">Kode di GitHub</a>
                     </div>
                 </div>
             </article>
 
+            <!-- 9. Portfolio -->
             <article class="project-card is-wide" data-cat="web">
                 <div class="project-image"><img src="images/portofolio1.jpeg" alt="Personal Portfolio Ruth Diana" loading="lazy" decoding="async"></div>
                 <div class="project-content">
                     <span class="tag tag-web">Web</span>
                     <h3>Personal Portfolio</h3>
-                    <p>Website yang sedang Anda lihat. Saya merancang dan membangunnya sendiri untuk menampilkan pengalaman, proyek, keahlian, dan organisasi.</p>
+                    <p data-i="p9g">Website yang sedang Anda lihat, dibuat untuk menampilkan pengalaman, proyek, keahlian, dan organisasi.</p>
+                    <dl class="project-facts">
+                        <div><dt data-i="lblR">Peran saya</dt><dd data-i="p9r">Merancang dan membangunnya sendiri.</dd></div>
+                        <div><dt data-i="lblW">Pekerjaan utama</dt><dd data-i="p9w">Desain responsif, filter proyek, tampilan dua bahasa, dan perbaikan aksesibilitas.</dd></div>
+                    </dl>
                     <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
                 </div>
             </article>
@@ -480,8 +527,8 @@
     <div class="container">
 
         <div class="section-heading">
-            <h2>Organisasi dan kepanitiaan</h2>
-            <p>Tempat saya belajar memimpin, berkoordinasi, dan bekerja sama.</p>
+            <h2 data-i="oH">Organisasi dan kepanitiaan</h2>
+            <p data-i="oP">Tempat saya belajar memimpin, berkoordinasi, dan bekerja sama.</p>
         </div>
 
         <article class="org-item">
@@ -490,8 +537,8 @@
             </figure>
             <div class="org-text">
                 <p class="org-date">2024</p>
-                <h3>Ketua Pelaksana Kuliah Umum Teknik Informatika 2024</h3>
-                <p>Bertanggung jawab atas koordinasi persiapan, pelaksanaan, dan pengelolaan kegiatan.</p>
+                <h3 data-i="o1t">Ketua Pelaksana Kuliah Umum Teknik Informatika 2024</h3>
+                <p data-i="o1d">Bertanggung jawab atas koordinasi persiapan, pelaksanaan, dan pengelolaan kegiatan.</p>
                 <ul class="chips"><li>Leadership</li><li>Coordination</li><li>Event management</li></ul>
             </div>
         </article>
@@ -503,7 +550,7 @@
             <div class="org-text">
                 <p class="org-date">2023 – 2025</p>
                 <h3>HIMATIF ULBI</h3>
-                <p>Aktif di Himpunan Mahasiswa Teknik Informatika ULBI dan terlibat dalam berbagai kegiatan serta kepanitiaan.</p>
+                <p data-i="o2d">Aktif di Himpunan Mahasiswa Teknik Informatika ULBI dan terlibat dalam berbagai kegiatan serta kepanitiaan.</p>
                 <ul class="chips"><li>Teamwork</li><li>Communication</li><li>Event</li></ul>
             </div>
         </article>
@@ -517,8 +564,8 @@
     <div class="container">
 
         <div class="section-heading">
-            <h2>Publikasi</h2>
-            <p>Karya ilmiah dan buku yang pernah saya tulis.</p>
+            <h2 data-i="uH">Publikasi</h2>
+            <p data-i="uP">Karya ilmiah dan buku yang pernah saya tulis.</p>
         </div>
 
         <ul class="pub-list">
@@ -526,36 +573,36 @@
                 <span class="pub-year">2026</span>
                 <div>
                     <h3>Perbandingan Kinerja CNN dan Attention-BiLSTM pada Klasifikasi Berita Berbahasa Indonesia dengan Variasi Representasi Teks</h3>
-                    <p>Jurnal Ilmiah Informatika Komputer. Letter of Acceptance (LoA) tersedia atas permintaan.</p>
+                    <p data-i="u1">Jurnal Ilmiah Informatika Komputer. Letter of Acceptance (LoA) tersedia atas permintaan.</p>
                 </div>
-                <span class="pub-status pub-accepted">Diterima</span>
+                <span class="pub-status pub-accepted" data-i="stA">Diterima</span>
             </li>
             <li class="pub-item">
                 <span class="pub-year">2026</span>
                 <div>
                     <h3>Deep Learning Evaluation for Interactive Dashboard-Base Mail Classification</h3>
-                    <p>Nuansa Informatika, Januari 2026</p>
-                    <a class="pub-link" href="https://journal.fkom.uniku.ac.id/ilkom/article/view/546" target="_blank" rel="noopener noreferrer">Baca artikel ↗</a>
+                    <p data-i="u2">Nuansa Informatika, Januari 2026</p>
+                    <a class="pub-link" href="https://journal.fkom.uniku.ac.id/ilkom/article/view/546" target="_blank" rel="noopener noreferrer" data-i="lnkA">Baca artikel ↗</a>
                 </div>
-                <span class="pub-status">Terbit</span>
+                <span class="pub-status" data-i="stP">Terbit</span>
             </li>
             <li class="pub-item">
                 <span class="pub-year">2026</span>
                 <div>
                     <h3>Sentiment Analysis for Delivery Pricing Optimization: Naïve Bayes Evaluation on Gojek Reviews</h3>
                     <p>Nuansa Informatika</p>
-                    <a class="pub-link" href="https://journal.fkom.uniku.ac.id/ilkom/article/view/520" target="_blank" rel="noopener noreferrer">Baca artikel ↗</a>
+                    <a class="pub-link" href="https://journal.fkom.uniku.ac.id/ilkom/article/view/520" target="_blank" rel="noopener noreferrer" data-i="lnkA">Baca artikel ↗</a>
                 </div>
-                <span class="pub-status">Terbit</span>
+                <span class="pub-status" data-i="stP">Terbit</span>
             </li>
             <li class="pub-item">
                 <span class="pub-year">2023</span>
                 <div>
                     <h3>Tutorial Mudah Membuat Website Penyewaan Alat-Alat Catering</h3>
                     <p>Penerbit Buku Pedia</p>
-                    <a class="pub-link" href="https://books.google.co.id/books/about/Tutorial_Mudah_Membuat_Website_Penyewaan.html?id=Q5HeEAAAQBAJ&redir_esc=y" target="_blank" rel="noopener noreferrer">Lihat buku ↗</a>
+                    <a class="pub-link" href="https://books.google.co.id/books/about/Tutorial_Mudah_Membuat_Website_Penyewaan.html?id=Q5HeEAAAQBAJ&redir_esc=y" target="_blank" rel="noopener noreferrer" data-i="lnkB">Lihat buku ↗</a>
                 </div>
-                <span class="pub-status pub-book">Buku</span>
+                <span class="pub-status pub-book" data-i="stB">Buku</span>
             </li>
         </ul>
 
@@ -567,12 +614,13 @@
 <section class="section contact" id="kontak">
     <div class="container">
         <div class="contact-box">
-            <h2>Ada peluang kerja atau proyek yang sesuai?</h2>
-            <p>Mari terhubung dan berdiskusi mengenai peluang kerja maupun kolaborasi profesional.</p>
+            <h2 data-i="cH">Ada peluang kerja atau proyek yang sesuai?</h2>
+            <p data-i="cP">Mari terhubung dan berdiskusi mengenai peluang kerja maupun kolaborasi profesional.</p>
 
             <div class="contact-actions">
                 <a href="mailto:ruthdianapurnamasarisagala@gmail.com" class="btn btn-light" id="email-link">ruthdianapurnamasarisagala@gmail.com</a>
-                <button type="button" class="btn btn-outline-light" id="copy-email">Salin email</button>
+                <button type="button" class="btn btn-outline-light" id="copy-email" data-i="cCopy">Salin email</button>
+                <a href="files/CV RUTH DIANA - English Version.pdf" class="btn btn-light" download data-cv data-href-id="files/CV RUTH DIANA - English Version.pdf" data-href-en="files/CV RUTH DIANA - English Version.pdf" data-i="bcv">Unduh CV (English)</a>
             </div>
 
             <div class="contact-social">
@@ -588,14 +636,14 @@
 <footer class="footer">
     <div class="container footer-inner">
         <p><strong>Ruth Diana Purnamasari Sagala</strong>, S.Tr.Kom</p>
-        <p>© <span id="current-year"></span> Ruth Diana. Hak cipta dilindungi.</p>
+        <p>© <span id="current-year"></span> Ruth Diana. <span data-i="fR">Hak cipta dilindungi.</span></p>
     </div>
 </footer>
 
-<a href="#kontak" class="fab" id="fab">Hubungi saya</a>
+<a href="#kontak" class="fab" id="fab" data-i="b2">Hubungi Saya</a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=5"></script>
+<script src="main.js?v=6"></script>
 </body>
 </html>
