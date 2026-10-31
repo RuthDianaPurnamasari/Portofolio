@@ -659,3 +659,63 @@ p { color: var(--muted); }
   .hero h1 { font-size: clamp(2rem, 9vw, 2.4rem); overflow-wrap: anywhere; }
   .hero-role, .hero-lead, .project-content h3 { overflow-wrap: anywhere; }
 }
+
+/* =========================================================
+   SERTIFIKAT
+   ========================================================= */
+.certificates { background: var(--white); border-block: var(--border); }
+.cert-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+.cert-wall figure {
+  margin: 0; background: var(--paper); border: var(--border); border-radius: 18px;
+  box-shadow: var(--pop-sm); overflow: hidden;
+}
+.cert-wall a { display: block; padding: 10px; background: var(--lilac); border-bottom: var(--border); }
+.cert-wall img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: contain;
+  background: var(--white); border-radius: 8px;
+}
+.cert-wall figcaption { padding: 12px 16px 16px; font-size: .85rem; color: var(--muted); line-height: 1.45; }
+.cert-wall figcaption strong {
+  display: block; margin-bottom: 2px; font-family: var(--font-display);
+  font-size: 1rem; color: var(--ink); line-height: 1.25;
+}
+
+/* =========================================================
+   SLIDER FOTO (organisasi & kepanitiaan)
+   ========================================================= */
+.slider { position: relative; overflow: hidden; min-height: 360px; background: var(--lilac); }
+.slider-track {
+  position: absolute; inset: 0; display: flex;
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-track img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: center; }
+
+.slider-btn {
+  position: absolute; top: 50%; z-index: 2; width: 42px; height: 42px; margin-top: -21px;
+  display: grid; place-items: center;
+  background: var(--white); color: var(--ink);
+  border: var(--border); border-radius: 50%; box-shadow: var(--pop-sm);
+  font-size: 1.6rem; line-height: 1; padding-bottom: 3px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.slider-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+.slider-btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--ink); }
+.slider-prev { left: 12px; }
+.slider-next { right: 12px; }
+
+.slider-dots {
+  position: absolute; left: 50%; bottom: 14px; z-index: 2; transform: translateX(-50%);
+  display: flex; gap: 6px; padding: 6px 10px;
+  background: var(--white); border: var(--border); border-radius: 999px;
+}
+.slider-dots span { width: 9px; height: 9px; border: 1.5px solid var(--ink); border-radius: 50%; background: var(--white); transition: background .2s ease, width .2s ease; }
+.slider-dots span.is-on { width: 22px; border-radius: 999px; background: var(--butter); }
+
+.slider.is-single .slider-btn, .slider.is-single .slider-dots { display: none; }
+
+@media (max-width: 720px) {
+  .org-photo.slider, .org-reverse .org-photo.slider { min-height: 260px; }
+  .slider-btn { width: 38px; height: 38px; margin-top: -19px; }
+}

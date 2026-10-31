@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================================= */
   const EN = {
     skip: "Skip to content",
-    nA: "About", nE: "Experience", nS: "Skills", nP: "Projects", nO: "Organizations", nU: "Publications", nC: "Contact",
+    nA: "About", nE: "Experience", nS: "Skills", nP: "Projects", nO: "Organizations", nU: "Publications", nX: "Certificates", nC: "Contact",
 
     eyebrow: "Professional portfolio",
     hello: "Hi, I'm",
@@ -110,6 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
     u2: "Nuansa Informatika, January 2026",
     stA: "Accepted", stP: "Published", stB: "Book",
     lnkA: "Read article ↗", lnkB: "View book ↗",
+
+    sPrev: "Previous photo", sNext: "Next photo",
+    zH: "Certificates",
+    zP: "Proof of my organizational work, campus activities, field internship, and education. Click an image to view it in full size.",
 
     cH: "Have a job opportunity or project in mind?",
     cP: "Let's connect and talk about job opportunities or professional collaboration.",
@@ -445,6 +449,91 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!lightbox.classList.contains("open")) return;
     if (e.key === "Escape") { closeLightbox(); return; }
     if (e.key === "Tab") { e.preventDefault(); lbClose.focus(); }  // fokus tetap di dialog
+  });
+
+  /* =========================================================
+     SLIDER FOTO (organisasi & kepanitiaan)
+     - Geser otomatis tiap beberapa detik
+     - Berhenti saat disentuh, di-hover, difokus, tab tidak aktif,
+       di luar layar, atau saat foto diperbesar
+     - Tidak jalan otomatis jika pengguna memilih "kurangi gerakan"
+     ========================================================= */
+  document.querySelectorAll("[data-slider]").forEach((root, sliderIndex) => {
+    const track = root.querySelector(".slider-track");
+    const slides = Array.from(track.children);
+    const total = slides.length;
+    if (total < 2) { root.classList.add("is-single"); return; }
+
+    const prev = root.querySelector(".slider-prev");
+    const next = root.querySelector(".slider-next");
+    const dotsBox = root.querySelector(".slider-dots");
+    const dots = slides.map(() => {
+      const d = document.createElement("span");
+      dotsBox.appendChild(d);
+      return d;
+    });
+
+    const current = () => Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+
+    function paint() {
+      const i = Math.min(current(), total - 1);
+      dots.forEach((d, k) => d.classList.toggle("is-on", k === i));
+    }
+
+    function go(i) {
+      const target = (i + total) % total;
+      const left = target * track.clientWidth;
+      if (typeof track.scrollTo === "function") {
+        track.scrollTo({ left: left, behavior: reduceMotion ? "auto" : "smooth" });
+      } else {
+        track.scrollLeft = left;
+      }
+    }
+
+    let scrollRaf = 0;
+    track.addEventListener("scroll", () => {
+      cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(paint);
+    }, { passive: true });
+    window.addEventListener("resize", () => go(current()));
+
+    prev.addEventListener("click", () => { go(current() - 1); holdUntil = Date.now() + 8000; });
+    next.addEventListener("click", () => { go(current() + 1); holdUntil = Date.now() + 8000; });
+
+    // Panah kiri/kanan saat slider difokus
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(current() - 1); holdUntil = Date.now() + 8000; }
+      if (e.key === "ArrowRight") { e.preventDefault(); go(current() + 1); holdUntil = Date.now() + 8000; }
+    });
+
+    /* ---- Otomatis ---- */
+    let hovering = false, focused = false, visible = false, holdUntil = 0;
+    root.addEventListener("mouseenter", () => { hovering = true; });
+    root.addEventListener("mouseleave", () => { hovering = false; });
+    root.addEventListener("focusin", () => { focused = true; });
+    root.addEventListener("focusout", () => { focused = false; });
+    ["touchstart", "pointerdown"].forEach((ev) =>
+      track.addEventListener(ev, () => { holdUntil = Date.now() + 8000; }, { passive: true }));
+
+    if (hasIO) {
+      new IntersectionObserver((entries) => { visible = entries[0].isIntersecting; }, { threshold: 0.4 }).observe(root);
+    } else {
+      visible = true;
+    }
+
+    if (!reduceMotion) {
+      // Jeda awal dibuat berbeda agar dua slider tidak bergeser bersamaan
+      setTimeout(() => {
+        setInterval(() => {
+          if (document.hidden || !visible || hovering || focused) return;
+          if (Date.now() < holdUntil) return;
+          if (lightbox.classList.contains("open")) return;
+          go(current() + 1);
+        }, 4500);
+      }, 1200 * sliderIndex);
+    }
+
+    paint();
   });
 
   /* ---------- Salin email ---------- */
