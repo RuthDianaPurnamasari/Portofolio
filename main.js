@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lbClose.setAttribute("aria-label", UI[lang].lbClose);
     }
     document.querySelectorAll("[data-cv]").forEach((a) => {
-      a.setAttribute("href", "files/CV RUTH DIANA - English Version.pdf");
+      a.setAttribute("href", "files/CV RUTH DIANA - English Version...pdf");
       a.setAttribute("download", "CV RUTH DIANA - English Version.pdf");
     });
     safeSet("lang", lang);
