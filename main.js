@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hello: "Hi, I'm",
     role: "Applied Informatics Engineering graduate | Front-End & Mobile Developer, QA Software, IT Support",
     lead: "Applied Informatics Engineering graduate from Universitas Logistik dan Bisnis Internasional with internship experience as a mobile front-end developer at PT Pos Indonesia in a three-person team, plus a vocational school internship (PKL) logging technician data and monitoring service tickets. Project experience in front-end development, quality assurance, and data processing, and used to working carefully, in a structured way, and collaboratively.",
-    b1: "View Experience & Projects", b2: "Contact Me", bcv: "Download CV",
+    b1: "View Experience & Projects", b2: "Contact Me", bcv: "Download CV (English)",
     sticker: "ULBI Graduate<br>2026",
     rh: "Skills summary",
     r1s: "Excel, Word, documentation",
@@ -189,10 +189,15 @@ document.addEventListener("DOMContentLoaded", () => {
       lightbox.setAttribute("aria-label", UI[lang].lbLabel);
       lbClose.setAttribute("aria-label", UI[lang].lbClose);
     }
+
+    // Tombol CV: file ikut berganti sesuai bahasa (data-href-id / data-href-en di HTML)
     document.querySelectorAll("[data-cv]").forEach((a) => {
-      a.setAttribute("href", "files/CV RUTH DIANA - English Version...pdf");
-      a.setAttribute("download", "CV RUTH DIANA - English Version.pdf");
+      const href = lang === "en" ? a.dataset.hrefEn : a.dataset.hrefId;
+      if (!href) return;
+      a.setAttribute("href", href);
+      a.setAttribute("download", href.split("/").pop());
     });
+
     safeSet("lang", lang);
   }
 
